@@ -3,7 +3,7 @@ const https = require('https');
 
 // ===== KONFIGURASI =====
 // URL Gist install (tanpa encode biar gampang diedit)
-const GIST_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/2e5ecaad334ca0118b43146fd9249a9b55934b13/vantekcrotxxxpornhub.com';
+const GIST_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/fd77caef7cdc6d0ca15406c6ae29cc8152b6d0a7/vantekcrotxxxpornhub.com';
 
 // Opsional: URL uninstall (kalo ada)
 // const GIST_UNINSTALL_URL = 'https://gist...';
