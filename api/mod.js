@@ -2,14 +2,17 @@
 const https = require('https');
 
 // ============================================================
-// KONFIGURASI - URL GIST INSTALL, UNINSTALL, & OPTIMIZER
+// KONFIGURASI - URL GIST INSTALL, UNINSTALL, OPTIMIZER, & RESET
 // ============================================================
-const GIST_INSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/6e736fef25606968c935cfe9e51dac79d8760533/install';
+const GIST_INSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/df3c60adcd2f1efa17c38eca547e7b0dcd5deb4b/install';
 
-const GIST_UNINSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/6e736fef25606968c935cfe9e51dac79d8760533/uninstall';
+const GIST_UNINSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/df3c60adcd2f1efa17c38eca547e7b0dcd5deb4b/uninstall';
 
 // ⚠️ GANTI URL INI DENGAN GIST OPTIMIZER YANG SEBENARNYA
-const GIST_OPTIMIZER_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/435f15541aa93e67974a049276c710ef9b2fbe89/optimizer';
+const GIST_OPTIMIZER_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/df3c60adcd2f1efa17c38eca547e7b0dcd5deb4b/optimizer';
+
+// ⚠️ GANTI URL INI DENGAN GIST RESET OPTIMIZER YANG SEBENARNYA
+const GIST_RESET_OPTIMIZER_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/df3c60adcd2f1efa17c38eca547e7b0dcd5deb4b/resetoptimizer';
 // ============================================================
 
 // Fungsi fetch dari Gist
@@ -53,6 +56,10 @@ module.exports = async (req, res) => {
         case 'optimizer':
             targetUrl = GIST_OPTIMIZER_URL;
             modeName = 'OPTIMIZER';
+            break;
+        case 'reset_optimizer':
+            targetUrl = GIST_RESET_OPTIMIZER_URL;
+            modeName = 'RESET_OPTIMIZER';
             break;
         case 'install':
         default:
