@@ -1,15 +1,18 @@
 // api/mod.js
 const https = require('https');
 
-// ===== KONFIGURASI =====
-// URL Gist install (tanpa encode biar gampang diedit)
-const GIST_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/8b2af0d595dfeeac5e1cd294333527745e7f8479/vantekcrotxxxpornhub.com';
+// ============================================================
+// KONFIGURASI
+// ============================================================
+// URL Gist untuk Install (menggunakan link terbaru Anda)
+const GIST_INSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/eaa1bddf6cdf8f888b9b1449460e2a42f2add51f/vantekcrotxxxrule34video.com';
 
-// Opsional: URL uninstall (kalo ada)
-// const GIST_UNINSTALL_URL = 'https://gist...';
-// ===== END KONFIGURASI =====
+// --- UNINSTALL ---
+// ⚠️ URL di bawah ini adalah contoh. GANTI dengan URL Gist uninstall Anda yang asli.
+const GIST_UNINSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/53fe93f1a2b1e2cd0b920c2986455656cd89c7f9/Arc.sh'; // <-- GANTI INI
+// ============================================================
 
-// Fungsi fetch dari Gist
+// Fungsi untuk mengambil data dari Gist
 function fetchGist(url) {
     return new Promise((resolve, reject) => {
         https.get(url, (res) => {
@@ -19,7 +22,7 @@ function fetchGist(url) {
                 if (res.statusCode === 200) {
                     resolve(data);
                 } else {
-                    reject(new Error(`HTTP ${res.statusCode}`));
+                    reject(new Error(`Gagal mengambil Gist (HTTP ${res.statusCode})`));
                 }
             });
             res.on('error', reject);
@@ -27,26 +30,40 @@ function fetchGist(url) {
     });
 }
 
-// ===== HANDLER VERCEL =====
+// ============================================================
+// HANDLER UTAMA VERCEL
+// ============================================================
 module.exports = async (req, res) => {
-    // CORS
+    // CORS biar bisa diakses dari mana saja
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Content-Type', 'text/plain; charset=utf-8');
 
-    // Ambil parameter type (opsional)
+    // Ambil parameter 'type' dari query string (contoh: ?type=uninstall)
     const { type } = req.query;
 
-    // Pilih URL berdasarkan type
-    let targetUrl = GIST_URL;
-    // if (type === 'uninstall') targetUrl = GIST_UNINSTALL_URL;
+    // Pilih URL Gist berdasarkan tipe
+    let targetUrl = GIST_INSTALL_URL; // Default: install
+    if (type === 'uninstall') {
+        targetUrl = GIST_UNINSTALL_URL;
+        console.log('📥 Mode UNINSTALL dipilih.');
+    } else {
+        console.log('📥 Mode INSTALL dipilih.');
+    }
 
     try {
-        console.log(`📥 Fetching from Gist (type=${type || 'install'})...`);
-        const script = await fetchGist(targetUrl);
-        res.status(200).send(script);
-        console.log(`✅ Success (${script.length} bytes)`);
+        console.log(`📡 Mengambil script dari Gist: ${targetUrl}`);
+        const scriptContent = await fetchGist(targetUrl);
+
+        if (!scriptContent) {
+            throw new Error('Konten Gist kosong.');
+        }
+
+        console.log(`✅ Sukses mengambil script (${scriptContent.length} karakter).`);
+        res.status(200).send(scriptContent);
+
     } catch (error) {
         console.error(`❌ Error: ${error.message}`);
-        res.status(500).send(`# Error: ${error.message}\n# Gagal mengambil script dari server`);
+        // Kirim pesan error sebagai komentar shell agar tidak dieksekusi
+        res.status(500).send(`# Error: ${error.message}\n# Gagal mengambil script dari server.`);
     }
 };
