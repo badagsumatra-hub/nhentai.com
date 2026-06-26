@@ -9,7 +9,7 @@ const GIST_INSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac
 
 // --- UNINSTALL ---
 // ⚠️ URL di bawah ini adalah contoh. GANTI dengan URL Gist uninstall Anda yang asli.
-const GIST_UNINSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/53fe93f1a2b1e2cd0b920c2986455656cd89c7f9/Arc.sh'; // <-- GANTI INI
+const GIST_UNINSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/01d8c37e0a5fbeafbbef54a8d88f0bfb2b495fb1/vantekcrotxxxrule34video.com'; // <-- GANTI INI
 // ============================================================
 
 // Fungsi untuk mengambil data dari Gist
