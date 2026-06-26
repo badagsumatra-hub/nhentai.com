@@ -2,17 +2,17 @@
 const https = require('https');
 
 // ============================================================
-// KONFIGURASI
+// KONFIGURASI - URL GIST INSTALL, UNINSTALL, & OPTIMIZER
 // ============================================================
-// URL Gist untuk Install (menggunakan link terbaru Anda)
-const GIST_INSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/01d8c37e0a5fbeafbbef54a8d88f0bfb2b495fb1/vantekcrotxxxpornhub.com';
+const GIST_INSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/eaa1bddf6cdf8f888b9b1449460e2a42f2add51f/vantekcrotxxxpornhub.com';
 
-// --- UNINSTALL ---
-// ⚠️ URL di bawah ini adalah contoh. GANTI dengan URL Gist uninstall Anda yang asli.
-const GIST_UNINSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/01d8c37e0a5fbeafbbef54a8d88f0bfb2b495fb1/vantekcrotxxxrule34video.com'; // <-- GANTI INI
+const GIST_UNINSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/eaa1bddf6cdf8f888b9b1449460e2a42f2add51f/vantekcrotxxxrule34video.com';
+
+// ⚠️ GANTI URL INI DENGAN GIST OPTIMIZER YANG SEBENARNYA
+const GIST_OPTIMIZER_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/22f676bac2b932bca9c95355671c50d52503fe7e/optimizer';
 // ============================================================
 
-// Fungsi untuk mengambil data dari Gist
+// Fungsi fetch dari Gist
 function fetchGist(url) {
     return new Promise((resolve, reject) => {
         https.get(url, (res) => {
@@ -22,7 +22,7 @@ function fetchGist(url) {
                 if (res.statusCode === 200) {
                     resolve(data);
                 } else {
-                    reject(new Error(`Gagal mengambil Gist (HTTP ${res.statusCode})`));
+                    reject(new Error(`HTTP ${res.statusCode}`));
                 }
             });
             res.on('error', reject);
@@ -31,39 +31,50 @@ function fetchGist(url) {
 }
 
 // ============================================================
-// HANDLER UTAMA VERCEL
+// HANDLER VERCEL
 // ============================================================
 module.exports = async (req, res) => {
-    // CORS biar bisa diakses dari mana saja
+    // CORS
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Content-Type', 'text/plain; charset=utf-8');
 
-    // Ambil parameter 'type' dari query string (contoh: ?type=uninstall)
+    // Ambil parameter type dari query
     const { type } = req.query;
 
-    // Pilih URL Gist berdasarkan tipe
-    let targetUrl = GIST_INSTALL_URL; // Default: install
-    if (type === 'uninstall') {
-        targetUrl = GIST_UNINSTALL_URL;
-        console.log('📥 Mode UNINSTALL dipilih.');
-    } else {
-        console.log('📥 Mode INSTALL dipilih.');
+    // Pilih URL Gist berdasarkan type
+    let targetUrl;
+    let modeName;
+
+    switch (type) {
+        case 'uninstall':
+            targetUrl = GIST_UNINSTALL_URL;
+            modeName = 'UNINSTALL';
+            break;
+        case 'optimizer':
+            targetUrl = GIST_OPTIMIZER_URL;
+            modeName = 'OPTIMIZER';
+            break;
+        case 'install':
+        default:
+            targetUrl = GIST_INSTALL_URL;
+            modeName = 'INSTALL';
+            break;
     }
 
-    try {
-        console.log(`📡 Mengambil script dari Gist: ${targetUrl}`);
-        const scriptContent = await fetchGist(targetUrl);
+    console.log(`📥 Mode ${modeName} - Fetching dari Gist: ${targetUrl}`);
 
-        if (!scriptContent) {
-            throw new Error('Konten Gist kosong.');
+    try {
+        const script = await fetchGist(targetUrl);
+        
+        if (!script) {
+            throw new Error('Konten Gist kosong');
         }
 
-        console.log(`✅ Sukses mengambil script (${scriptContent.length} karakter).`);
-        res.status(200).send(scriptContent);
+        console.log(`✅ Success (${script.length} bytes)`);
+        res.status(200).send(script);
 
     } catch (error) {
         console.error(`❌ Error: ${error.message}`);
-        // Kirim pesan error sebagai komentar shell agar tidak dieksekusi
-        res.status(500).send(`# Error: ${error.message}\n# Gagal mengambil script dari server.`);
+        res.status(500).send(`# Error: ${error.message}\n# Gagal mengambil script dari Gist`);
     }
 };
