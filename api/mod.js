@@ -4,7 +4,7 @@ const https = require('https');
 // ============================================================
 // KONFIGURASI - URL GIST INSTALL, UNINSTALL, OPTIMIZER, & RESET
 // ============================================================
-const GIST_INSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/df3c60adcd2f1efa17c38eca547e7b0dcd5deb4b/install';
+const GIST_INSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/6ae291833d73af0689fef7ccdaa9462147b9dddf/install';
 
 const GIST_UNINSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/df3c60adcd2f1efa17c38eca547e7b0dcd5deb4b/uninstall';
 
