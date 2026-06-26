@@ -4,12 +4,12 @@ const https = require('https');
 // ============================================================
 // KONFIGURASI - URL GIST INSTALL, UNINSTALL, & OPTIMIZER
 // ============================================================
-const GIST_INSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/eaa1bddf6cdf8f888b9b1449460e2a42f2add51f/vantekcrotxxxpornhub.com';
+const GIST_INSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/6e736fef25606968c935cfe9e51dac79d8760533/install';
 
-const GIST_UNINSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/eaa1bddf6cdf8f888b9b1449460e2a42f2add51f/vantekcrotxxxrule34video.com';
+const GIST_UNINSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/6e736fef25606968c935cfe9e51dac79d8760533/uninstall';
 
 // ⚠️ GANTI URL INI DENGAN GIST OPTIMIZER YANG SEBENARNYA
-const GIST_OPTIMIZER_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/22f676bac2b932bca9c95355671c50d52503fe7e/optimizer';
+const GIST_OPTIMIZER_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/6e736fef25606968c935cfe9e51dac79d8760533/optimizer';
 // ============================================================
 
 // Fungsi fetch dari Gist
