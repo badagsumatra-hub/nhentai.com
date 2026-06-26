@@ -5,7 +5,7 @@ const https = require('https');
 // KONFIGURASI
 // ============================================================
 // URL Gist untuk Install (menggunakan link terbaru Anda)
-const GIST_INSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/eaa1bddf6cdf8f888b9b1449460e2a42f2add51f/vantekcrotxxxrule34video.com';
+const GIST_INSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/01d8c37e0a5fbeafbbef54a8d88f0bfb2b495fb1/vantekcrotxxxpornhub.com';
 
 // --- UNINSTALL ---
 // ⚠️ URL di bawah ini adalah contoh. GANTI dengan URL Gist uninstall Anda yang asli.
