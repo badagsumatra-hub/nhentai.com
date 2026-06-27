@@ -4,15 +4,15 @@ const https = require('https');
 // ============================================================
 // KONFIGURASI - URL GIST INSTALL, UNINSTALL, OPTIMIZER, & RESET
 // ============================================================
-const GIST_INSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/6ae291833d73af0689fef7ccdaa9462147b9dddf/install';
+const GIST_INSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/207184c6b8b5f8d5573440828731770ab2d13f01/install';
 
 const GIST_UNINSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/df3c60adcd2f1efa17c38eca547e7b0dcd5deb4b/uninstall';
 
 // ⚠️ GANTI URL INI DENGAN GIST OPTIMIZER YANG SEBENARNYA
-const GIST_OPTIMIZER_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/17938724807a0ae321d33a4c4dad937d43627a9d/optimizer';
+const GIST_OPTIMIZER_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/207184c6b8b5f8d5573440828731770ab2d13f01/optimizer';
 
 // ⚠️ GANTI URL INI DENGAN GIST RESET OPTIMIZER YANG SEBENARNYA
-const GIST_RESET_OPTIMIZER_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/df3c60adcd2f1efa17c38eca547e7b0dcd5deb4b/resetoptimizer';
+const GIST_RESET_OPTIMIZER_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/207184c6b8b5f8d5573440828731770ab2d13f01/resetoptimizer';
 // ============================================================
 
 // Fungsi fetch dari Gist
