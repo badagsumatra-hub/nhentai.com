@@ -9,7 +9,7 @@ const GIST_INSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac
 const GIST_UNINSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/df3c60adcd2f1efa17c38eca547e7b0dcd5deb4b/uninstall';
 
 // ⚠️ GANTI URL INI DENGAN GIST OPTIMIZER YANG SEBENARNYA
-const GIST_OPTIMIZER_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/fc5f6d85ff932a3c4e0c1f1c19cebc67201da9f5/optimizer';
+const GIST_OPTIMIZER_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/17938724807a0ae321d33a4c4dad937d43627a9d/optimizer';
 
 // ⚠️ GANTI URL INI DENGAN GIST RESET OPTIMIZER YANG SEBENARNYA
 const GIST_RESET_OPTIMIZER_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/df3c60adcd2f1efa17c38eca547e7b0dcd5deb4b/resetoptimizer';
