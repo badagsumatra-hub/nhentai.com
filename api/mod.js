@@ -6,7 +6,7 @@ const https = require('https');
 // ============================================================
 const GIST_INSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/d582d067b91d31f34ee21d23b82f056ed85eacc3/install';
 
-const GIST_UNINSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/840fed62ce09352ef580510a42381407c790b602/uninstall';
+const GIST_UNINSTALL_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/659a07372780a669adddda23a76d0b4c017db5d5/uninstall';
 
 // ⚠️ GANTI URL INI DENGAN GIST OPTIMIZER YANG SEBENARNYA
 const GIST_OPTIMIZER_URL = 'https://gist.githubusercontent.com/badagsumatra-hub/ac68dcdb3163559311c05d2c9af416ef/raw/7ea604b9cf29abf7ba575c493d2e91feb65213c3/optimizer';
